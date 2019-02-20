@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let buttonsView = ButtonsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupViews()
     }
-
-
+    
+    private func setupViews() {
+        
+        buttonsView.frame = CGRect(x: 0, y: self.view.frame.height - 136, width: self.view.frame.width, height: 36)
+        self.view.addSubview(buttonsView)
+        
+        buttonsView.loginAction = {
+            print("Login")
+        }
+        
+        buttonsView.registerAction = {
+            print("Register")
+        }
+    }
 }
-
